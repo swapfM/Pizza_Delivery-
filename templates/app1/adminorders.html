@@ -1,0 +1,22 @@
+{% extends 'app1/base.html' %} 
+{% block content %}
+{% load static %} 
+<link rel="stylesheet" href="{% static 'app1/adminorders.css' %}">
+
+</head>
+<body>
+
+    <h1>All Orders</h1>
+    {% for order in orders %} 
+    <div class="alert alert-warning" role="alert">
+        <p>{{order.username}}</p>
+        <p>{{order.phone}}</p>
+        <p>{{order.address}}</p>
+        <p>{{order.ordereditems}}</p>
+        <p>oder status : {{order.status}}</p>
+        <a href = "/acceptorder/{{order.id}}" class="btn btn-success">Accept</a>
+        <a href = "/declineorder/{{order.id}}" class="btn btn-danger">Decline</a>
+    </div>
+    {% endfor %}
+
+{% endblock %}

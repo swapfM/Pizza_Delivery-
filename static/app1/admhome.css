@@ -1,0 +1,32 @@
+body{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+.first{
+    padding-top: 20px;
+    display: block;
+    width: 500px;
+    margin: auto;
+}
+.form-control{
+    width: 200px;
+    display: inline;
+}
+.btn{
+    display: inline;
+}
+
+.second{
+    padding: 20px;
+    width: 500px;
+    margin: auto;
+
+}
+thead{
+    background-color: black;
+}
+th{
+    color: white;
+}
+

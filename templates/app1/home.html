@@ -1,0 +1,40 @@
+{% extends 'app1/base.html' %}
+{% block content %}
+
+{% load static %} 
+<link rel="stylesheet" href="{% static 'app1/home.css' %}"> 
+
+</head>
+<body>
+
+    <nav class = "navbar navbar-light bg-light">
+    <a class="navbar-brand">Welcome</a>
+    <a class="btn btn-danger" href="loginuser/">Login</a>
+
+
+</nav>
+    {% for message in messages %}
+    <p style="text-align: center; color:red;">{{message}}</p> 
+    {% endfor %} 
+
+<div class="container-fluid" style="position: relative;">
+    
+    <div class="container">
+        <h1>Sign Up!</h1>
+        <form action="signup/" method="POST">
+            {% csrf_token %}
+            <input class= "form-control" placeholder="Username" type="text" name="username">
+            <input class= "form-control" placeholder="Password" type="password" name="password">
+            <input class= "form-control" placeholder="Phone" type="text" name="phone">
+            <input class="form-control" placeholder="Email" type="email" name="email" required>
+            <input type="submit" type="text" class="btn btn-success" name="">
+            
+        </form>
+    </div>
+</div>
+
+
+
+</body>
+
+{% endblock %}

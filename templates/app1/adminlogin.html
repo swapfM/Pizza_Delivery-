@@ -1,0 +1,30 @@
+
+
+{% extends 'app1/base.html' %} 
+
+{% block content %}  
+<title>Document</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'app1/adminlogin.css' %}">
+</head>
+<body>
+<div class = "main">
+    <h1>Admin Login</h1>
+    <form method="POST" action = "adminauthenticate">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username" class="form-control">
+        <input type = "password" placeholder="Password" class="form-control" name="password">
+        <input type="submit" name="" class="btn btn-success" style="display: block;  margin:auto; margin-top:10px">
+    
+    </form>
+    </div>
+    
+    {% for message in messages %}
+    <p class="error">{{message}}</p>
+    {% endfor %}
+    
+
+
+
+
+{% endblock %}

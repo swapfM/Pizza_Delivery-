@@ -1,0 +1,50 @@
+{% extends 'app1/base.html' %} 
+{% block content %} 
+
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'app1/customerhome.css' %}">
+
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand">Welcome {{username}}</a>
+      <a class="nav-item myorders" href = "/userorders/">My Orders</a>
+      <a href="/userlogout/" class = "btn btn-danger">LogOut</a>
+    
+    </div>
+  </nav>
+ 
+
+<form method="POST" action="/placeorder/">
+    {% csrf_token %}
+<div class = "container">
+    {% for message in messages %}
+
+    <p style="color: green; text-align:center;">{{message}}</p>
+
+    {% endfor %}
+<table>
+    <tr>
+        <th>Pizza &nbsp;</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+    {% for pizza in pizzas %}
+    <tr>
+        <td>{{pizza.name}} &nbsp;</td>
+        <td>{{pizza.price}}</td>
+        <td><input type="number" name= "{{pizza.id}}" value="0" min="0" style="width: 60px";"></td>
+    </tr>
+    {% endfor %}
+</table>
+<input type="text" style="width:400px; margin-top:100px" name="address" placeholder="Address">
+
+<input type="submit" class = "btn btn-outline-success" value = "Place Order" name = "">
+</div>
+
+</form>
+
+
+{% endblock %}

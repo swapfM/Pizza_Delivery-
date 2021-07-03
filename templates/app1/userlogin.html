@@ -1,0 +1,30 @@
+{% extends 'app1/base.html' %} 
+{% block content %} 
+
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'app1/userlogin.css' %}">
+
+</head>
+<body>
+
+
+<div class="container">
+    <h1>Login</h1>
+    <form  method = "POST" action="/userauthenticate/">
+        {% csrf_token %}
+    <input class = "form-control" type="text" name="username" placeholder="username">
+    <input class = "form-control" type = "password" name = "password" placeholder="password">
+    <input type = "submit" class= "btn btn-success" namae="">
+    </form>
+
+    {% for message in messages %} 
+    <p>{{message}}</p>
+
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}
+

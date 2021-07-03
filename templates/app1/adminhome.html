@@ -1,0 +1,54 @@
+
+{% extends 'app1/base.html' %} 
+
+{% block content %}  
+<title>Document</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'app1/admhome.css' %}">
+</head>
+<body>
+
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand">Welcome Admin</a>
+         <a class="nav-item" href="/adminorders/">All Orders</a>
+          <a class="btn btn-danger" href="adminlogout">LogOut</a>
+          
+        </div>
+      </nav>
+
+      <form action="addpizza" method="POST">
+        {% csrf_token %}
+        <div class="first container">
+        <input type = "text" class="form-control form1" name="pizza" placeholder="Pizza">
+        <input type = "text" class="form-control form1" name="price" placeholder="Price">
+        <input type="submit" value="Add" name="" class="btn btn-success">
+      </div>
+      </form>
+     
+      <div class="container second">
+      <table class= "table">
+        <thead class="thead-dark">
+        <tr>
+          <th>Pizza name</th>
+          <th>Price</th>
+          <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for pizza in selected_pizzas %}
+        <tr>
+          <td>{{ pizza.name }}</td>
+          <td>{{ pizza.price }}</td>
+          <td><a href="deletepizza/{{pizza.id}}" class="btn btn-danger">Delete</a></td>
+          
+        </tr>
+      </tbody>
+        {% endfor %}
+      </table>
+
+    </div>
+
+</body>
+{% endblock %}

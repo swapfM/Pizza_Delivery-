@@ -1,0 +1,30 @@
+body{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.main{
+    background-color: #fe6e00;
+    width: 300px;
+    margin: auto;
+    display: block;
+    margin-top: 300px;
+    padding:20px;
+    border-radius: 5px;
+}
+
+.form-control{
+
+    margin-bottom: 5px;
+}
+h1{
+    text-align: center;
+    color:white;
+}
+
+.error{
+
+    text-align: center;
+    color: red;
+    font-weight: 600;
+}

@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 40rem;
+    margin: auto;
+    margin-top: 10%;
+    
+}
+
+table{
+   width: 100%;
+}
+
+
+
+.btn-outline-success{
+
+    float: right;
+    margin-top: 100px;
+}
+
+.myorders{
+
+    text-decoration: none;
+}
