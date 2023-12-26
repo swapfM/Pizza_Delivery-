@@ -1,4 +1,4 @@
-.venv/
+/.venv/
 .idea/
 Pizza/email_indo.py
 db.sqlite3
